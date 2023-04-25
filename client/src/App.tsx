@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 
 const App: React.FC = () => {
@@ -7,6 +7,15 @@ const App: React.FC = () => {
   const [detail, setDetail] = useState<boolean>(false);
   const [points, setPoints] = useState<boolean>(false);
 
+  useEffect(() => {
+    const queryInfo = { active: true, lastFocusedWindow: true };
+
+    chrome.tabs &&
+      chrome.tabs.query(queryInfo, (tabs) => {
+        const url = tabs[0].url;
+        if (url) setUrl(url);
+      });
+  }, []);
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setResponse("");

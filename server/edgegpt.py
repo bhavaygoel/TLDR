@@ -5,8 +5,7 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
-bot = Chatbot(cookiePath='./cookies.json')
-
+bot = Chatbot(cookie_path='./cookies.json')
 
 @app.route('/', methods=['POST'])
 async def chatbot():
