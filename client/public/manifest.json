@@ -1,6 +1,6 @@
 {
-    "name": "Hello Extensions",
-    "description": "Base Level Extension",
+    "name": "TLDR",
+    "description": "Summarize content on a webpage.",
     "version": "3.0",
     "manifest_version": 3,
     "action": {

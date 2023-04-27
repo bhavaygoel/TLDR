@@ -1,3 +1,6 @@
-.display-linebreak {
-    white-space: pre-line;
-  }
+body {
+  height: 600px;
+  width: 800px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
